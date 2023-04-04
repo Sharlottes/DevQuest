@@ -6,5 +6,11 @@ public class GameStatisticsManager : DDOLSingletonMonoBehaviour<GameStatisticsMa
 {
     [SerializeField] private GameStatisticsCollector _collector;
     public GameStatisticsCollector Collector => _collector;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _collector.Init();
+    }
 }
 
